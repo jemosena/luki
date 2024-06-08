@@ -36,6 +36,7 @@
               class="form-control"
               id="nombresRegistro"
               placeholder="Ingresa tus nombres"
+              value="santiago"
               required
             />
           </div>
@@ -46,6 +47,7 @@
               class="form-control"
               id="apellidosRegistro"
               placeholder="Ingresa tus apellidos"
+              value="cardona"
               required
             />
           </div>
@@ -59,6 +61,21 @@
                 type="email"
                 class="form-control"
                 id="emailRegistro"
+                value="cardona@gmail.com"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <label for="contraseñaRegistro" class="form-label"
+              >Contraseña</label
+            >
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="contraseñaRegistro"
+                value="1234"
                 required
               />
             </div>
@@ -72,6 +89,7 @@
               class="form-control"
               id="dirRegistro"
               placeholder="Dirección"
+              value="dir falsa"
               required
             />
           </div>
@@ -82,6 +100,7 @@
               class="form-control"
               id="barrioRegistro"
               placeholder="Barrio"
+              value="barrio falso"
               required
             />
           </div>
@@ -92,6 +111,7 @@
               class="form-control"
               id="telRegistro"
               placeholder="Telefono"
+              value="3149079898"
               required
             />
           </div>
@@ -107,13 +127,13 @@
               onchange="verInfoAdicional(this)"
               required
             >
-              <option selected disabled value="">Seleccione...</option>
-              <option value="asesora">Asesora</option>
+              <option disabled value="">Seleccione...</option>
+              <option selected value="asesora">Asesora</option>
               <option value="supervisor">Supervisor</option>
             </select>
           </div>
         </div>
-        <div id="informacion_adicional_asesora" class="row mt-4" hidden>
+        <div id="informacion_adicional_asesora" class="row mt-4">
           <div class="col">
             <label for="tallablusaRegistro" class="form-label"
               >Talla blusa</label
@@ -123,6 +143,7 @@
               class="form-control"
               id="tallablusaRegistro"
               placeholder="Talla blusa"
+              value="S"
               required
             />
           </div>
@@ -135,6 +156,7 @@
               class="form-control"
               id="tallafaldaRegistro"
               placeholder="Talla falda"
+              value="30"
               required
             />
           </div>
@@ -194,6 +216,9 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <!-- IMPORTAMSO AXIOS PARA LAS PETICIONES AL "BACKEND" -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- IMPORTAMOS EL JS PROPIO -->
     <script src="function.js"></script>

@@ -20,15 +20,16 @@ const verInfoAdicional = (element) => {
 }
 
 //Funcion para capturar y enviar la informacion del forumlario de registro
-const registrarse = () => {
+const registrarse = async () => {
   //objeto que contiene toda la informacion del formulario de registro
   const obj = {
-    nombres: document.querySelector("#nombresRegistro").value,
-    apellidos: document.querySelector("#apellidosRegistro").value,
+    nombre: document.querySelector("#nombresRegistro").value,
+    apellido: document.querySelector("#apellidosRegistro").value,
     email: document.querySelector("#emailRegistro").value,
-    dir: document.querySelector("#dirRegistro").value,
+    constraseña: document.querySelector("#contraseñaRegistro").value,
+    direccion: document.querySelector("#dirRegistro").value,
     barrio: document.querySelector("#barrioRegistro").value,
-    tel: document.querySelector("#telRegistro").value,
+    telefono: document.querySelector("#telRegistro").value,
     rol: document.querySelector("#rolRegistro").value
   };
 
@@ -42,10 +43,26 @@ const registrarse = () => {
   if (obj.rol == "supervisor") {
     obj.tallaCamisa = document.querySelector("#tallacamisaRegistro").value;
     obj.tallaPantalon = document.querySelector("#tallapantalonRegistro").value;
-    obj.placa = document.querySelector("#placamotoRegistro").value;
+    obj.placaMoto = document.querySelector("#placamotoRegistro").value;
   }
 
-  console.log("formData: ", obj);
+  let res = null;
+
+  await axios.post('../backend/acciones.php', {"accion": "crear", "data": obj}).
+    then(function(response){
+      res = response.data;
+    }).catch(function(error){
+      console.log("error: ", error);
+    });
+
+  if(res.status){
+    //ingresar al index
+    alert(res.msg);
+    location.href = 'http://localhost/luki/coord/coord.html';
+  }else{
+    alert(res.msg);
+  }
+
 }
 
 

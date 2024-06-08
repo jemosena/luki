@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2024 a las 17:44:09
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 08-06-2024 a las 19:55:57
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,13 @@ CREATE TABLE `asesoras` (
   `fecha_creacion` datetime NOT NULL,
   `fecha_actualizacion` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `asesoras`
+--
+
+INSERT INTO `asesoras` (`id_asesora`, `id_usuario`, `talla_blusa`, `talla_falda`, `fecha_creacion`, `fecha_actualizacion`) VALUES
+(6, 24, 'S', '30', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -149,6 +156,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `contraseña` varchar(100) NOT NULL,
   `direccion` varchar(150) NOT NULL,
   `barrio` varchar(50) NOT NULL,
   `telefono` varchar(11) NOT NULL,
@@ -160,8 +168,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `direccion`, `barrio`, `telefono`, `fecha_creacion`, `fecha_actualizacion`) VALUES
-(1, 'carlos', 'caicedo', 'carloscaideo@gmail.com', 'calle falsa', 'aranjuez', '3113115858', '2024-05-15 01:11:24', '2024-05-15 01:11:24');
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `contraseña`, `direccion`, `barrio`, `telefono`, `fecha_creacion`, `fecha_actualizacion`) VALUES
+(1, 'carlos', 'caicedo', 'carloscaideo@gmail.com', '', 'calle falsa', 'aranjuez', '3113115858', '2024-05-15 01:11:24', '2024-05-15 01:11:24'),
+(24, 'santiago', 'cardona', 'cardona@gmail.com', '1234', 'dir falsa', 'barrio falso', '3149079898', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
 -- Índices para tablas volcadas
@@ -231,7 +240,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asesoras`
 --
 ALTER TABLE `asesoras`
-  MODIFY `id_asesora` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_asesora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -273,7 +282,7 @@ ALTER TABLE `supervisores`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Restricciones para tablas volcadas

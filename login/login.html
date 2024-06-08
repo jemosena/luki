@@ -25,7 +25,7 @@
   <body>
     <div class="container-fluid login_container">
       <!--FORMULARIO DESCARGADO DESDE BOOTSTRAP-->
-      <form class="form_login">
+      <form id="formulario_inicio" class="form_login">
         <!-- TITULO DEL FORUMLARIO -->
         <div class="form_title">Inicio de sesión</div>
 
@@ -53,9 +53,9 @@
           />
         </div>
         <div class="buttons_container">
-          <a href="../coord/coord.html" class="btn btn-primary mb-3">
+          <button onclick="iniciar_sesion()" class="btn btn-primary mb-3">
             INGRESAR
-          </a>
+          </button>
           <p>¿No tienes cuenta?</p>
           <a class="btn btn-primary" href="../registro/registro.html"
             >REGISTRATE</a
@@ -73,7 +73,10 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- CUSTOM JS -->
+    <!-- IMPORTAMSO AXIOS PARA LAS PETICIONES AL "BACKEND" -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- IMPORTAMOS EL JS PROPIO -->
     <script src="login.js"></script>
   </body>
 </html>
