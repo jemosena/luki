@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "45fe89bb-784c-4d21-986d-ef728257e34c",
+		"name": "Luki Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29687162"
+	},
+	"item": [
+		{
+			"name": "Inicio de sesion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accion\": \"iniciar_sesion\",\r\n    \"data\": {\r\n        \"email\": \"cardona3@gmail.com\",\r\n        \"contraseña\": \"1234\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/luki/backend/acciones.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"luki",
+						"backend",
+						"acciones.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accion\": \"crear\",\r\n    \"data\": {\r\n        \"nombre\": \"santiago3\",\r\n        \"apellido\": \"cardona3\",\r\n        \"email\": \"cardona3@gmail.com\",\r\n        \"constraseña\": \"1234\",\r\n        \"direccion\": \"dir falsa3\",\r\n        \"barrio\": \"barrio falso3\",\r\n        \"telefono\": \"3149079858\",\r\n        \"rol\": \"asesora\",\r\n        \"tallaBlusa\": \"S\",\r\n        \"tallaFalda\": \"30\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/luki/backend/acciones.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"luki",
+						"backend",
+						"acciones.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.npoint.io/420e169e1483ddbdbec0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"npoint",
+						"io"
+					],
+					"path": [
+						"420e169e1483ddbdbec0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
